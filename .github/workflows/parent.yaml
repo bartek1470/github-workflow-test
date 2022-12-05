@@ -1,0 +1,21 @@
+name: Parent
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - my-app/**
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./my-app
+
+jobs:
+  nested-job:
+    uses: ./.github/workflows/nested.yaml
+
+  parent-job:
+    run: >
+      echo $(pwd)
