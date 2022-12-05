@@ -14,7 +14,14 @@ defaults:
 
 jobs:
   job-from-nested-job:
+    runs-on:
+      ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: nested job step
         run: >
           echo $(pwd)
