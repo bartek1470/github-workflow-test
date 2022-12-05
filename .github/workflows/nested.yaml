@@ -9,6 +9,10 @@ on:
   workflow_dispatch:
   workflow_call:
 
+defaults:
+  run:
+    working-directory: ./my-app
+
 jobs:
   job-from-nested-job:
     runs-on:
