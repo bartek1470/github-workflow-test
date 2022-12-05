@@ -27,4 +27,4 @@ jobs:
           echo $(pwd)
 
       - name: nested job step
-        uses: ./.github/workflows/nested.yaml
+        uses: .github/workflows/nested.yaml
