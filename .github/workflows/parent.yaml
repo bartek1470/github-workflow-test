@@ -13,9 +13,11 @@ defaults:
     working-directory: ./my-app
 
 jobs:
-  nested-job:
-    uses: ./.github/workflows/nested.yaml
-
   parent-job:
-    run: >
-      echo $(pwd)
+    steps:
+      - name: parent job step
+        run: >
+          echo $(pwd)
+
+      - name: nested job step
+        uses: ./.github/workflows/nested.yaml

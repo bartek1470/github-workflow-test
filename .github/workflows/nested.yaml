@@ -13,6 +13,8 @@ defaults:
     working-directory: ./my-app
 
 jobs:
-  from-nested-job:
-    run: >
-      echo $(pwd)
+  job-from-nested-job:
+    steps:
+      - name: nested job step
+        run: >
+          echo $(pwd)
